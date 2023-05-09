@@ -8,11 +8,23 @@ import { Client } from './client';
 })
 export class ClientService {
 
+  url = "http://localhost:3005/clients";
   constructor(private http: HttpClient) { }
 
    getClients(): Observable<Client[]>{
-    let url = "http://localhost:3000/clients";
-    return this.http.get<Client[]>(url);
+    return this.http.get<Client[]>(this.url);
    }
-   
+
+   save (client : Client): Observable<Client>{
+    return this.http.post<Client>(this.url, client);
+   }
+   delete (client : Client): Observable<void>{
+    return this.http.delete<void>(`${this.url}/${client.id}`);
+   }
+   update (client : Client): Observable<Client>{
+    return this.http.put<Client>(`${this.url}/${client.id}`, client);
+   }
+   clean (client : Client): Observable<void>{
+    return this.http.delete<void>(`${this.url}/${client.id}`);
+   }
 }
