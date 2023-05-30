@@ -7,11 +7,13 @@ import { ClientsComponent } from './clients/clients.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ClientFormComponent } from './client-form/client-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientsComponent
+    ClientsComponent,
+    ClientFormComponent
   ],
   imports: [
     BrowserModule,
