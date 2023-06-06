@@ -1,0 +1,16 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ClientFormComponent } from './client-form/client-form.component';
+import { ClientsComponent } from './clients/clients.component';
+
+const routes: Routes = [
+  {path: 'clients',component :ClientsComponent},
+  {path: 'clientDetails/:id', component : ClientFormComponent},
+  {path: 'createClient', component : ClientFormComponent},
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

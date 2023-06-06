@@ -1,8 +1,4 @@
-<app-client-form [client]="client"
-(saveEvent)="onSaveEvent($event)"
-(CleanEvent)="onCleanEvent()"
->
-</app-client-form>
+<button class=" p-2 mt-3 btn btn-success" (click)="create ()"> Novo</button>
 
 <table class="table table-striped">
   <thead>
@@ -19,8 +15,8 @@
       <td>{{client.name}}</td>
       <td>{{client.email}}</td>
       <td>
-        <button class="btn btn-primary me-1" (click)="edit(client)">Editar</button>
-        <button class="btn btn-primary" (click)="delete(client)">Excluir</button>
+        <button class="btn btn-light bg-light me-1 " (click)="edit(client)">Editar</button>
+        <button class="btn btn-secondary  bg-secondary" (click)="delete(client)">Excluir</button>
       </td>
     </tr>
 
